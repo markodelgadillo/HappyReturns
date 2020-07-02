@@ -8,11 +8,19 @@
 // https://happyreturnsqatest.free.beeceptor.com/order
 /* Create a POST request using the converted data as the body  */
 
-const http = new XMLHttpRequest();
-const url = "https://happyreturnsqatest.free.beeceptor.com/getProductVariants";
+// Using AJAX
 
-http.open("GET", url);
+function getRequest(url) {
+  const http = new XMLHttpRequest();
 
-http.onreadystatechange = (e) => {
-  console.log(http.responseText);
-};
+  http.open("GET", url);
+
+  http.onreadystatechange = (e) => {
+    // see what the response looks like first
+    // when an event occurs
+    console.log(http.responseText);
+  };
+}
+
+getRequest("https://happyreturnsqatest.free.beeceptor.com/getProductVariants");
+// save the response text and convert it to JSON
